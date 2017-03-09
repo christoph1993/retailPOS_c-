@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="gshs_pos" Class="posformconnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-E1K009VH\GSHSDB;Initial Catalog=gshs_pos;Integrated Security=True" SettingsObjectName="GSHS_POS.Properties.Settings" SettingsPropertyName="gshs_posConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.inventory" Member="inventories">
+    <Type Name="inventory">
+      <Column Name="inventoryID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="itemCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoiceDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="recieveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="inventory_inventoryItem" Member="inventoryItems" ThisKey="inventoryID" OtherKey="inventoryID" Type="inventoryItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.transactions" Member="transactions">
+    <Type Name="transaction">
+      <Column Name="transactionID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="items" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="transaction_reciept" Member="reciepts" ThisKey="transactionID" OtherKey="transactionID" Type="reciept" />
+    </Type>
+  </Table>
+  <Table Name="dbo.reciept" Member="reciepts">
+    <Type Name="reciept">
+      <Column Name="transactionID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="transaction_reciept" Member="transaction" ThisKey="transactionID" OtherKey="transactionID" Type="transaction" IsForeignKey="true" />
+      <Association Name="product_reciept" Member="product" ThisKey="productID" OtherKey="productID" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.products" Member="products">
+    <Type Name="product">
+      <Column Name="productID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="size" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="style" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="second_hand" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="inStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="code" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="product_reciept" Member="reciepts" ThisKey="productID" OtherKey="productID" Type="reciept" />
+      <Association Name="product_inventoryItem" Member="inventoryItems" ThisKey="productID" OtherKey="productID" Type="inventoryItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.inventoryItems" Member="inventoryItems">
+    <Type Name="inventoryItem">
+      <Column Name="inventoryID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="inventory_inventoryItem" Member="inventory" ThisKey="inventoryID" OtherKey="inventoryID" Type="inventory" IsForeignKey="true" />
+      <Association Name="product_inventoryItem" Member="product" ThisKey="productID" OtherKey="productID" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

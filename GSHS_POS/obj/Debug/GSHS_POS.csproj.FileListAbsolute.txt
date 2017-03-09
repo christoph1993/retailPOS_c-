@@ -1,0 +1,11 @@
+c:\users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\bin\Debug\GSHS_POS.exe.config
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.csprojResolveAssemblyReference.cache
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.GSHSForm.resources
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.Properties.Resources.resources
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.csproj.GenerateResource.Cache
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\bin\Debug\GSHS_POS.exe
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\bin\Debug\GSHS_POS.pdb
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.exe
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.pdb
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.customDialogTextBox.resources
+C:\Users\chris\documents\visual studio 2015\Projects\GSHS_POS\GSHS_POS\obj\Debug\GSHS_POS.radioSelect.resources

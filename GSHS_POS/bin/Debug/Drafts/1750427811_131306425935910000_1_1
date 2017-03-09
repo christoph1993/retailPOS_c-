@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Draft>
+    <invoiceProductCode>3</invoiceProductCode>
+    <invoiceProductCategory>category3</invoiceProductCategory>
+    <invoiceProductStyle>style3</invoiceProductStyle>
+    <invoiceProductSize>SIZE</invoiceProductSize>
+    <invoiceQuantityToAdd>1</invoiceQuantityToAdd>
+    <inventoryProductCost>3</inventoryProductCost>
+  </Draft>
+</DocumentElement>
